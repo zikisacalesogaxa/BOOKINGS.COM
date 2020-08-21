@@ -1,0 +1,99 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<main class="flights-container container mt-4">
+		<h1>{{title}}</h1>
+		<div class="mt-4 row d-flex justify-content-between">
+			<div class="flight-days col-5 bg-light shadow p-4" scope="col">
+				<h2 class="mb-4">Monday</h2>
+				<div class="flight-time mb-4 ml-5">
+					<h3>Morning</h3>
+					<div class="flight-data">
+						<span>Capacity:
+							{{ monday.morning.capacity }}</span>
+						<br>
+						<span>Cancelled Seats:
+							{{ monday.morning.cancelled_seats }}</span>
+						<br>
+						<span>Seats Left:
+							{{ monday.morning.capacity - monday.morning.booked_seats|length }}</span>
+						<br>
+					</div>
+				</div>
+				<div class="flight-time mb-4 ml-5">
+					<h3>Midday</h3>
+					<div class="flight-data">
+						<span>Capacity:
+							{{ monday.midday.capacity }}</span>
+						<br>
+						<span>Cancelled Seats:
+							{{ monday.midday.cancelled_seats }}</span>
+						<br>
+						<span>Seats Left:
+							{{ monday.midday.capacity - monday.midday.booked_seats|length }}</span>
+						<br>
+					</div>
+				</div>
+				<div class="flight-time mb-4 ml-5">
+					<h3>Evening</h3>
+					<div class="flight-data">
+						<span>Capacity:
+							{{ monday.evening.capacity }}</span>
+						<br>
+						<span>Cancelled Seats:
+							{{ monday.evening.cancelled_seats }}</span>
+						<br>
+						<span>Seats Left:
+							{{ monday.evening.capacity - monday.evening.booked_seats|length }}</span>
+						<br>
+					</div>
+				</div>
+			</div>
+			<div class="flight-days col-5 bg-light shadow p-4" scope="col">
+				<h2 class="mb-4">Tuesday</h2>
+				<div class="flight-time mb-4 ml-5">
+					<h3>Morning</h3>
+					<div class="flight-data">
+						<span>Capacity:
+							{{ tuesday.morning.capacity }}</span>
+						<br>
+						<span>Cancelled Seats:
+							{{ tuesday.morning.cancelled_seats }}</span>
+						<br>
+						<span>Seats Left:
+							{{ tuesday.morning.capacity - tuesday.morning.booked_seats|length }}</span>
+						<br>
+					</div>
+				</div>
+				<div class="flight-time mb-4 ml-5">
+					<h3>Midday</h3>
+					<div class="flight-data">
+						<span>Capacity:
+							{{ tuesday.midday.capacity }}</span>
+						<br>
+						<span>Cancelled Seats:
+							{{ tuesday.midday.cancelled_seats }}</span>
+						<br>
+						<span>Seats Left:
+							{{ tuesday.midday.capacity - tuesday.midday.booked_seats|length }}</span>
+						<br>
+					</div>
+				</div>
+				<div class="flight-time mb-4 ml-5">
+					<h3>Evening</h3>
+					<div class="flight-data">
+						<span>Capacity:
+							{{ tuesday.evening.capacity }}</span>
+						<br>
+						<span>Cancelled Seats:
+							{{ tuesday.evening.cancelled_seats }}</span>
+						<br>
+						<span>Seats Left:
+							{{ tuesday.evening.capacity - tuesday.evening.booked_seats|length }}</span>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></main>{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+	<main class="container">
+		<form method="POST" action="/signup" class="container-md col-5 p-5 mt-5 bg-light shadow rounded">
+			<h1 class="mb-4">{{ title }}</h1>
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" name="username" aria-label="Username" id="username" aria-describedby="basic-addon1" required>
+			</div>
+			<div class="form-group mb-3">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block btn-dark mb-4">Signup</button>
+			<span>Already have an account? <a href="/login">Login</a></span>
+			{% if messages.error %}
+				<p class="text-danger mt-3">{{ messages.error }}</p>
+			{% endif %}
+		</form>
+	</main>
+{% endblock %}
