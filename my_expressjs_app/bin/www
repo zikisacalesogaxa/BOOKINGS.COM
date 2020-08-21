@@ -4,15 +4,23 @@
  * Module dependencies.
  */
 
-var app = require('../app');
 var debug = require('debug')('my-expressjs-app:server');
+var dbConnect = require('../config/connection');
+var app = require('../server');
 var http = require('http');
+require('dotenv').config();
+
+/**
+ * Connect to database
+ */
+
+dbConnect();
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT);
 app.set('port', port);
 
 /**
