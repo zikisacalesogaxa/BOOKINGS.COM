@@ -11,6 +11,7 @@ const app = express();
 var flightsRouter = require('./routes/flights');
 var bookingRouter = require('./routes/booking');
 var loginRouter = require('./routes/auth/login');
+var logoutRouter = require('./routes/auth/logout');
 var signupRouter = require('./routes/auth/signup');
 
 // view engine setup
@@ -43,6 +44,7 @@ isLoggedIn = (req, res, next) => {
 // setup routers
 app.use('/', flightsRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/signup', signupRouter);
 app.use('/booking', isLoggedIn, bookingRouter);
 

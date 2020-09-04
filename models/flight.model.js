@@ -1,145 +1,25 @@
 const mongoose = require('mongoose');
 
 const flightSchema = mongoose.Schema({
-	monday: {
-		morning: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		midday: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		evening: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		}
+	day: {
+		type: String,
 	},
-	tuesday: {
-		morning: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		midday: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		evening: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		}
+	time: {
+		type: String
 	},
-	wednesday: {
-		morning: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		midday: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		evening: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		}
+	capacity: {
+		type: Number,
+		default: 10
 	},
-	thursday: {
-		morning: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		midday: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		evening: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		}
+	booked_seats: {
+		type: Array
 	},
-	friday: {
-		morning: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		midday: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		evening: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		}
+	cancelled_seats: {
+		type: Number,
+		default: 0
 	},
-	saturday: {
-		morning: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		midday: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		evening: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		}
-	},
-	sunday: {
-		morning: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		midday: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		},
-		evening: {
-			capacity: Number,
-			booked_seats: Array,
-			cancelled_seats: Number,
-			seats_left: Number
-		}
+	seats_left: {
+		type: Number
 	}
 });
 

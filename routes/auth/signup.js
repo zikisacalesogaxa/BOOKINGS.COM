@@ -5,14 +5,15 @@ var router = express.Router();
 var authController = require('../../controllers/auth.controller');
 
 router.get('/', function(req, res, next) {
-	res.render('auth/signup', { title: 'Signup', signupnav: 'active' });
+	var loggedIn = (req.session.username) ? true : false;
+	res.render('auth/signup', { title: 'Signup', signupnav: 'active', loggedIn });
 });
 
 router.post('/', function(req, res, next) {
 	let { username, password } = req.body;
 	authController.signup(username, password).then((result) => {
 		if (result == 'exist') {
-			req.flash('error', 'User already exists, try Logging In');
+			req.flash('error', 'User already exists');
 			res.redirect('/signup');
 		} else {
 			req.session.username = username;

@@ -1,7 +1,12 @@
 module.exports = () => {
 	const mongoose = require('mongoose');
 	const mongoURL = process.env.MONGO_DB_URL;
-	mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+	mongoose.connect(mongoURL, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+		useFindAndModify: false
+	});
 
 	var db = mongoose.connection;
 

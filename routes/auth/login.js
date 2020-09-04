@@ -5,7 +5,8 @@ var router = express.Router();
 var authController = require('../../controllers/auth.controller');
 
 router.get('/', function(req, res, next) {
-	res.render('auth/login', { title: 'Login', loginnav: 'active' });
+	var loggedIn = (req.session.username) ? true : false;
+	res.render('auth/login', { title: 'Login', loginnav: 'active', loggedIn });
 });
 
 router.post('/', function(req, res, next) {
@@ -15,7 +16,7 @@ router.post('/', function(req, res, next) {
 			req.session.username = username;
 			res.redirect('/booking');
 		} else {
-			req.flash('error', 'Invalid username or password, try Signing Up');
+			req.flash('error', 'Invalid username or password');
 			res.redirect('/login');
 		}
 	});
